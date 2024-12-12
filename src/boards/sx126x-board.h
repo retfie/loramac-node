@@ -72,9 +72,11 @@ void SX126xIoDbgInit( void );
 void SX126xReset( void );
 
 /*!
- * \brief Blocking loop to wait while the Busy pin in high
+ * \brief Blocking or Non-Blocking loop to wait while the Busy pin in high
+ *
+ * \retval Returns -ETIMEDOUT on timeout, 0 on success
  */
-void SX126xWaitOnBusy( void );
+int SX126xWaitOnBusy( void );
 
 /*!
  * \brief Wakes up the radio

@@ -143,9 +143,11 @@ void SX126xReset( void )
     DelayMs( 10 );
 }
 
-void SX126xWaitOnBusy( void )
+int SX126xWaitOnBusy( void )
 {
     while( GpioRead( &SX126x.BUSY ) == 1 );
+
+    return 0;
 }
 
 void SX126xWakeup( void )
